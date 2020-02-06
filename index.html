@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <!--div.header__left>h1.header__logo+div.header__right>p.header__caption+(nav.header__nav>ul.navList>li.navList__item*4>a.navList__link)+(a.header__contactBtn)+(a.header__twitterBtn>img)+(a.header__instagaramBtn>img)-->
+            <div class="header__left">
+                <h1 class="header__logo"></h1>
+                <div class="header__right">
+                    <p class="header__caption">このサイトはうたよみのポートフォリオサイトです。お気軽にお問い合わせください。</p>
+                    <nav class="header__nav">
+                        <ul class="navList">
+                            <li class="navList__item"><a href="" class="navList__link">Work</a></li>
+                            <li class="navList__item"><a href="" class="navList__link">Profile</a></li>
+                            <li class="navList__item"><a href="" class="navList__link">Service</a></li>
+                            <li class="navList__item"><a href="" class="navList__link">Flow</a></li>
+                        </ul>
+                    </nav>
+                    <a href="" class="header__contactBtn">Contact</a>
+                    <a href="" class="header__twitterBtn"><img src="" alt=""></a>
+                    <a href="" class="header__instagaramBtn"><img src="" alt=""></a>
+                </div>
+            </div>
+        </header>
+        <div class="mainVisual"></div>
+        <div id="work">
+            <!-- emmet -->
+            <!-- h2.workTtl+div.tabwrap>(lavel.tab1_label[for=tab$]*3)+(div.panel_area>div#panel$.tab_panel*3) -->
+            <h2 class="Ttl__h2">Works / 制作物</h2>
+            <div class="work__Contents">
+                <imput type="radio" name="tab_btn" id="tab1"></imput>
+                <imput type="radio" name="tab_btn" id="tab2"></imput>
+                <imput type="radio" name="tab_btn" id="tab3"></imput>
+                <div class="tabwrap">
+                    <lavel class="tab1_label" for="tab1">デザイン</lavel>
+                    <lavel class="tab1_label" for="tab2">WEB制作</lavel>
+                    <lavel class="tab1_label" for="tab3">３Dモデリング</lavel>
+                </div>
+                <div class="panelArea">
+                    <div id="panel1" class="tab_panel"></div>
+                    <div id="panel2" class="tab_panel"></div>
+                    <div id="panel3" class="tab_panel"></div>
+                </div>
+            </div>
+        </div>
+        <div id="service">
+            <h2 class="Ttl__h2-white">Service / 出来ること</h2>
+            <div class="service__Contents">
+                <div class="serviceRight">
+                    <h3 class="Ttl__h3">デザイン</h3>
+                    <div class="service__inner-img"><img src="" alt=""></div>
+                    <div class="service__inner-h4">
+                        <p class="service__h4">DM、チラシ、名刺
+                            バナー、LP、
+                            パッケージデザイン
+                            製品イラスト作成等</p>
+                    </div>
+                        <p class="service__p">文章が入ります。文章が入ります。文章が入ります。
+                            文章が入ります。文章が入ります。文章が入ります。
+                            文章が入ります。文章が入ります。文章が入ります。</p>
+                </div>
+                <div class="serviceLeft">
+                    <h3 class="Ttl__h3">WEB制作</h3>
+                    <div class="service__inner-img"><img src="" alt=""></div>
+                    <div class="service__inner-h4">
+                        <p class="service__h4">WEBデザイン、
+                            HTML、CSS、
+                            ホームページ修正、
+                            画像の差し替え等</p>
+                    </div>
+                        <p class="service__p">文章が入ります。文章が入ります。文章が入ります。
+                            文章が入ります。文章が入ります。文章が入ります。
+                            文章が入ります。文章が入ります。文章が入ります。</p>
+                </div>
+            </div>
+        </div>
+        <div id="flow">
+            <div class="flow__Contents">
+                <h2 class="Ttl__h2"></h2>
+                <div class="flow__flowbox">
+                    <ol class="flowList">
+                        <li class="flowList__item-red"><span class="flow__number"></span>1<span class="flow__caption">ご気軽にお問い合わせください</span></li>
+                        <li class="flowList__item"><span class="flow__number"></span>2<span class="flow__caption">ご依頼内容の確認・お見積り・詳細説明</span></li>
+                        <li class="flowList__item"><span class="flow__number"></span>3<span class="flow__caption">正式なご依頼</span></li>
+                        <li class="flowList__item"><span class="flow__number"></span>4<span class="flow__caption">デザイン制作作業 / サイト制作作業</span></li>
+                        <li class="flowList__item"><span class="flow__number"></span>5<span class="flow__caption">ご確認 / 修正作業</span></li>
+                        <li class="flowList__item-bule"><span class="flow__number"></span>6<span class="flow__caption"></span>納品</li>
+                    </ol>
+                </div>
+                <div class="flow__Tablebox">
+                    <h3 class="Ttl__h3-green"></h3>
+                    <table class="flow__Table">
+                        <tr class="flow__tr">
+                            <th class="flow__th-blue">制作費用目安表</th>
+                            <th class="flow__th-blue">費用</th>
+                            <th class="flow__th-blue">期間</th>
+                        </tr>
+                        <tr>
+                            <th class="flow__th-green">バナーデザイン</th>
+                            <td class="flow__td">3000円～</td>
+                            <td class="flow__td">2週間～</td>
+                        </tr>
+                        <tr>
+                            <th class="flow__th-green">製品イラスト作成</th>
+                            <td class="flow__td">3000円～</td>
+                            <td class="flow__td">2週間～</td>
+                        </tr>
+                        <tr>
+                            <th class="flow__th-green">DM、チラシデザイン</th>
+                            <td class="flow__td">6000円～</td>
+                            <td class="flow__td">3週間～</td>
+                        </tr>
+                        <tr>
+                            <th class="flow__th-green">WEB制作 LP1ページ</th>
+                            <td class="flow__td">20000円～</td>
+                            <td class="flow__td">4週間～</td>
+                        </tr>
+                        <tr>
+                            <th class="flow__th-green">修正、画像差し替え等</th>
+                            <td class="flow__td">ご相談ください</td>
+                            <td class="flow__td">ご相談ください</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="profile">
+            <div class="profile__Contents">
+                <h2 class="Ttl__h2">Profile / 自己紹介</h2>
+                <div class="profile__box">
+                    <div class="profile__box-left"><img src="" alt="" class="profile__img"></div>
+                    <div class="profile__box-right">
+                        <dl class="profile__dl">
+                            <dt class="profile__dt">名前</dt>
+                            <dd class="profile__dd">うたよみ</dd>
+                            <dt class="profile__dt">スキル</dt>
+                            <dd class="profile__dd">Illustrator Photoshop HTML/CSS jQuery Premiere Pro Blender </dd>
+                            <dt class="profile__dt">経歴</dt>
+                            <dd class="profile__dd">・2018年1月～12月まで
+                                ネットショップの会社でデザインをしていました。
+                                バナー、LP、HP制作など幅広くやっています。
+                                ・2019年1月～
+                                WEB制作会社でデザインの仕事をしています。
+                                WEB制作や保守、Wordpress案件などに携わっていました。</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact"></div>
+        <footer></footer>
+    </div>
+</body>
+</html>
