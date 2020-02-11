@@ -4,48 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/slick-theme.css" />
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="../css/slick.css" />
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../js/slick.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/smooth-scroll.js"></script>
     <script>　
-        $(document).ready(function(){
-         　$('header__slider').slick({
-         　setting-name: setting-value
-         　});
-         });
-        </script>
+        $(function(){
+        $('.header__slider').slick();
+        });
+        var scroll = new SmoothScroll('a[href*="#"]');
+        
+     </script>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <!--div.header__left>h1.header__logo+div.header__right>p.header__caption+(nav.header__nav>ul.navList>li.navList__item*4>a.navList__link)+(a.header__contactBtn)+(a.header__twitterBtn>img)+(a.header__instagaramBtn>img)-->
             <div class="header__left">
-                <h1 class="header__logo"><img src="img/headerlogo@2x.png" alt=""></h1>
+                <h1 class="header__logo"><a href="#"><img src="img/headerlogo@2x.png" alt=""></a></h1>
             </div>
             <div class="header__right">
                 <p class="header__caption">このサイトはうたよみのポートフォリオサイトです。お気軽にお問い合わせください。</p>
                 <nav class="header__nav">
                     <ul class="navList">
-                        <li class="navList__item"><a href="" class="navList__link">Work</a></li>
-                        <li class="navList__item"><a href="" class="navList__link">Profile</a></li>
-                        <li class="navList__item"><a href="" class="navList__link">Service</a></li>
-                        <li class="navList__item"><a href="" class="navList__link">Flow</a></li>
+                        <li class="navList__item"><a href="#work" class="navList__link" data-scroll>Work</a></li>
+                        <li class="navList__item"><a href="#service" class="navList__link" data-scroll>Service</a></li>
+                        <li class="navList__item"><a href="#flow" class="navList__link" data-scroll>Flow</a></li>
+                        <li class="navList__item"><a href="#profile" class="navList__link" data-scroll>Profile</a></li>
                     </ul>
+                    <a href="#contact" class="header__contactBtn"><img class="contact__icon" src="img/contact_aicon@2x.png" alt="">Contact</a>
+                    <a href="" class="header__twitterBtn"><img src="img/twitter_aicon@2x.png" alt=""></a>
+                    <a href="" class="header__instagaramBtn"><img src="img/instagram_aicon@2x.png" alt=""></a>
                 </nav>
-                <a href="" class="header__contactBtn">Contact</a>
-                <a href="" class="header__twitterBtn"><img src="img/twitter_aicon@2x.png" alt=""></a>
-                <a href="" class="header__instagaramBtn"><img src="img/instagram_aicon@2x.png" alt=""></a>
             </div>
         </header>
         <div class="mainVisual">
             <div class="header__slider">
-                <div class="slider__item"><img src="img/" alt=""><p>テストテストテスト</p></div>
-                <div class="slider__item"><p>テストテストテスト</p></div>
-                <div class="slider__item"><p>テストテストテスト</p></div>
+                <div class="slider__item"><img class="slider__bg" src="img/mainimg_bg.jpg" alt="">
+                    <div class="slider__left float_left">
+                        <img class="slider__imgLeft" src="img/Design-mainimglogo.png" alt="">
+                        <p class="slider__pLeft">練習で制作したバナーです。<br>
+                            仕事ではWEBデザイン、チラシ、<br>名刺、LP等、幅広くデザインしています。<br>
+                            写真加工や切り抜き等も出来ます。</p>
+                    </div>
+                    <div class="slider__right float_right">
+                        <img class="slider__imgRight" src="img/mainimg-left.png" alt="">
+                    </div>
+                </div>
+                <div class="slider__item"><img class="slider__bg" src="img/mainimg_bg2.jpg" alt="">
+                    <div class="slider__right float_left">
+                        <img class="slider__imgRight" src="img/web_img.png" alt="">
+                    </div>
+                    <div class="slider__left float_right">
+                        <img class="slider__imgLeft float_right" src="img/WEB-mainimglogo.png" alt="">
+                        <p class="slider__pLeft">仕事で会社ホームページや製品紹介ページなどを制作していました。<br>
+                            スマホ用に対応させるレスポンシブも可能です。<br>簡単な動画編集もできます。<br></p>
+                    </div>
+                </div>
+                <div class="slider__item"><img class="slider__bg" src="img/mainimg_bg.jpg" alt=""><p>スライド３</p></div>
             </div>
-        </div>
+         </div>
+    </div>
         <div id="work">
             <!-- emmet -->
             <!-- h2.workTtl+div.tabwrap>(lavel.tab1_label[for=tab$]*3)+(div.panel_area>div#panel$.tab_panel*3) -->
@@ -185,10 +207,10 @@
                 <div class="footer__Contents-right">
                     <nav class="footer__nav">
                         <ul class="navList">
-                            <li class="navList__item"><a href="" class="navList__link">Work</a></li>
-                            <li class="navList__item"><a href="" class="navList__link">Profile</a></li>
-                            <li class="navList__item"><a href="" class="navList__link">Service</a></li>
-                            <li class="navList__item"><a href="" class="navList__link">Flow</a></li>
+                            <li class="navList__item"><a data-scroll href="#work" class="navList__link">Work</a></li>
+                            <li class="navList__item"><a data-scroll href="#service" class="navList__link">Profile</a></li>
+                            <li class="navList__item"><a data-scroll href="#flow" class="navList__link">Service</a></li>
+                            <li class="navList__item"><a data-scroll href="#profile" class="navList__link">Flow</a></li>
                         </ul>
                     </nav>
                     <a href="" class="header__contactBtn">Contact</a>
