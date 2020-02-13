@@ -11,80 +11,141 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/slick.js"></script>
     <script src="js/smooth-scroll.js"></script>
+    <script src="js/rellax.js"></script>
     <script>　
         $(function(){
-        $('.header__slider').slick();
+            $('.header__slider').slick({
+                autoplay:true,
+                autoplaySpeed:5000,
+                dots:true,
+                speed: 1000,
+                pauseOnFocus: false,
+                pauseOnHover: false,
+                pauseOnDotsHover: false
+             });
+             
+             var slider = $('.work__slider').slick();
+
+             $('input[name="tab_btn"]').change(function() {
+             slider.slick('setPosition');
+            });
+
+             $(window).bind('scroll',function(e){
+             parallaxScroll();
+            });
+
+        function parallaxScroll(){
+        var scrolled = $(window).scrollTop();
+        $('#parallax-bg1').css('top', ( 0 - (scrolled * .2) ) + 'px');
+        $('#parallax-bg2').css('top', ( 0 - (scrolled * .2) ) + 'px');
+        $('#parallax-bg3').css('top', ( 0 - (scrolled * .2) ) + 'px');
+    };
+
         });
         var scroll = new SmoothScroll('a[href*="#"]');
-        
-     </script>
+    </script>
 </head>
 <body>
     <div class="wrapper">
         <header>
+            <div class="header__contents">
             <!--div.header__left>h1.header__logo+div.header__right>p.header__caption+(nav.header__nav>ul.navList>li.navList__item*4>a.navList__link)+(a.header__contactBtn)+(a.header__twitterBtn>img)+(a.header__instagaramBtn>img)-->
-            <div class="header__left">
-                <h1 class="header__logo"><a href="#"><img src="img/headerlogo@2x.png" alt=""></a></h1>
-            </div>
-            <div class="header__right">
-                <p class="header__caption">このサイトはうたよみのポートフォリオサイトです。お気軽にお問い合わせください。</p>
-                <nav class="header__nav">
-                    <ul class="navList">
-                        <li class="navList__item"><a href="#work" class="navList__link" data-scroll>Work</a></li>
-                        <li class="navList__item"><a href="#service" class="navList__link" data-scroll>Service</a></li>
-                        <li class="navList__item"><a href="#flow" class="navList__link" data-scroll>Flow</a></li>
-                        <li class="navList__item"><a href="#profile" class="navList__link" data-scroll>Profile</a></li>
-                    </ul>
-                    <a href="#contact" class="header__contactBtn"><img class="contact__icon" src="img/contact_aicon@2x.png" alt="">Contact</a>
-                    <a href="" class="header__twitterBtn"><img src="img/twitter_aicon@2x.png" alt=""></a>
-                    <a href="" class="header__instagaramBtn"><img src="img/instagram_aicon@2x.png" alt=""></a>
-                </nav>
-            </div>
+                <div class="header__left">
+                    <h1 class="header__logo"><a href="#"><img src="img/headerlogo@2x.png" alt=""></a></h1>
+                </div>
+                <div class="header__right">
+                    <p class="header__caption">このサイトはうたよみのポートフォリオサイトです。お気軽にお問い合わせください。</p>
+                    <nav class="header__nav">
+                        <ul class="navList">
+                            <li class="navList__item"><a href="#work" class="navList__link" data-scroll>Work</a></li>
+                            <li class="navList__item"><a href="#service" class="navList__link" data-scroll>Service</a></li>
+                            <li class="navList__item"><a href="#flow" class="navList__link" data-scroll>Flow</a></li>
+                            <li class="navList__item"><a href="#profile" class="navList__link" data-scroll>Profile</a></li>
+                        </ul>
+                        <a href="#contact" class="header__contactBtn"><img class="contact__icon" src="img/contact_aicon@2x.png" alt="">Contact</a>
+                        <a href="" class="header__twitterBtn"><img src="img/twitter_aicon@2x.png" alt=""></a>
+                        <a href="" class="header__instagaramBtn"><img src="img/instagram_aicon@2x.png" alt=""></a>
+                    </nav>
+                </div>
+             </div>
         </header>
         <div class="mainVisual">
             <div class="header__slider">
-                <div class="slider__item"><img class="slider__bg" src="img/mainimg_bg.jpg" alt="">
-                    <div class="slider__left float_left">
-                        <img class="slider__imgLeft" src="img/Design-mainimglogo.png" alt="">
-                        <p class="slider__pLeft">練習で制作したバナーです。<br>
-                            仕事ではWEBデザイン、チラシ、<br>名刺、LP等、幅広くデザインしています。<br>
-                            写真加工や切り抜き等も出来ます。</p>
+                <div class="slider__item"><img class="slider__bg" id="parallax-bg1" src="img/mainimg_bg.jpg" alt="">
+                    <div class="slider__left float_left boxshadow__topBtm">
+                        <div class="sliderLeft__contents">
+                            <img class="slider__imgLeft" src="img/Design-mainimglogo.png" alt="">
+                            <p class="slider__pLeft">練習で制作したバナーです。<br>
+                                仕事ではWEBデザイン、チラシ、<br>名刺、LP等、幅広くデザインしています。<br>
+                                写真加工や切り抜き等も出来ます。</p>
+                        </div>
                     </div>
                     <div class="slider__right float_right">
                         <img class="slider__imgRight" src="img/mainimg-left.png" alt="">
                     </div>
                 </div>
-                <div class="slider__item"><img class="slider__bg" src="img/mainimg_bg2.jpg" alt="">
+                <div class="slider__item"><img class="slider__bg" id="parallax-bg2" src="img/mainimg_bg2.jpg" alt="">
                     <div class="slider__right float_left">
                         <img class="slider__imgRight" src="img/web_img.png" alt="">
                     </div>
-                    <div class="slider__left float_right">
+                    <div class="slider__left float_right boxshadow__topBtm">
                         <img class="slider__imgLeft float_right" src="img/WEB-mainimglogo.png" alt="">
                         <p class="slider__pLeft">仕事で会社ホームページや製品紹介ページなどを制作していました。<br>
                             スマホ用に対応させるレスポンシブも可能です。<br>簡単な動画編集もできます。<br></p>
                     </div>
                 </div>
-                <div class="slider__item"><img class="slider__bg" src="img/mainimg_bg.jpg" alt=""><p>スライド３</p></div>
+                <div class="slider__item"><img class="slider__bg" id="parallax-bg3" src="img/mainimg_bg.jpg" alt=""><p>スライド３</p></div>
             </div>
          </div>
     </div>
         <div id="work">
+            <div class="scroll__imgBox">
+                <img src="img/scroll_img@2x.png" alt="スクロールイメージ" class="scroll__img">
+            </div>
             <!-- emmet -->
             <!-- h2.workTtl+div.tabwrap>(lavel.tab1_label[for=tab$]*3)+(div.panel_area>div#panel$.tab_panel*3) -->
             <h2 class="Ttl__h2">Works / 制作物</h2>
             <div class="work__Contents">
-                <imput type="radio" name="tab_btn" id="tab1"></imput>
-                <imput type="radio" name="tab_btn" id="tab2"></imput>
-                <imput type="radio" name="tab_btn" id="tab3"></imput>
-                <div class="tabwrap">
-                    <lavel class="tab1_label" for="tab1">デザイン</lavel>
-                    <lavel class="tab1_label" for="tab2">WEB制作</lavel>
-                    <lavel class="tab1_label" for="tab3">３Dモデリング</lavel>
-                </div>
-                <div class="panelArea">
-                    <div id="panel1" class="tab_panel"></div>
-                    <div id="panel2" class="tab_panel"></div>
-                    <div id="panel3" class="tab_panel"></div>
+                <div class="tabWrap">
+                    <input type="radio" name="tab_btn" id="tab1" checked>
+                    <label class="tab_label pink" for="tab1">デザイン</label>
+                    <input type="radio" name="tab_btn" id="tab2">
+                    <label class="tab_label blue" for="tab2">WEB制作</label>
+                    <input type="radio" name="tab_btn" id="tab3">
+                    <label class="tab_label orange" for="tab3">３Dモデリング</label>
+                    <div id="panel1" class="tab_panel">
+                        <div class="work__slider">
+                            <div class="workSlider__sliderBox">
+                                <div class="workSlide__flexBox">
+                                    <div class="work__item">画像が入るよ</div>
+                                    <div class="work__item">画像が入るよ</div>
+                                    <div class="work__item">画像が入るよ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="panel2" class="tab_panel">
+                        <div class="work__slider">
+                            <div class="workSlider__sliderBox">
+                                <div class="workSlide__flexBox">
+                                    <div class="work__item">画像が入るよ</div>
+                                    <div class="work__item">画像が入るよ</div>
+                                    <div class="work__item">画像が入るよ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="panel3" class="tab_panel">
+                        <div class="work__slider">
+                            <div class="workSlider__sliderBox">
+                                <div class="workSlide__flexBox">
+                                    <div class="work__item">画像が入るよ</div>
+                                    <div class="work__item">画像が入るよ</div>
+                                    <div class="work__item">画像が入るよ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,7 +154,7 @@
             <div class="service__Contents">
                 <div class="serviceRight">
                     <h3 class="Ttl__h3">デザイン</h3>
-                    <div class="service__inner-img"><img src="" alt=""></div>
+                    <div class="service__inner-img"><img src="img/desigh_aicon@2x.png" alt=""></div>
                     <div class="service__inner-h4">
                         <p class="service__h4">DM、チラシ、名刺
                             バナー、LP、
@@ -106,7 +167,7 @@
                 </div>
                 <div class="serviceLeft">
                     <h3 class="Ttl__h3">WEB制作</h3>
-                    <div class="service__inner-img"><img src="" alt=""></div>
+                    <div class="service__inner-img"><img src="img/web_aicon@2x.png" alt=""></div>
                     <div class="service__inner-h4">
                         <p class="service__h4">WEBデザイン、
                             HTML、CSS、
@@ -121,19 +182,19 @@
         </div>
         <div id="flow">
             <div class="flow__Contents">
-                <h2 class="Ttl__h2"></h2>
+                <h2 class="Ttl__h2">Flow / ご依頼・制作の流れ</h2>
                 <div class="flow__flowbox">
                     <ol class="flowList">
-                        <li class="flowList__item-red"><span class="flow__number"></span>1<span class="flow__caption">ご気軽にお問い合わせください</span></li>
-                        <li class="flowList__item"><span class="flow__number"></span>2<span class="flow__caption">ご依頼内容の確認・お見積り・詳細説明</span></li>
-                        <li class="flowList__item"><span class="flow__number"></span>3<span class="flow__caption">正式なご依頼</span></li>
-                        <li class="flowList__item"><span class="flow__number"></span>4<span class="flow__caption">デザイン制作作業 / サイト制作作業</span></li>
-                        <li class="flowList__item"><span class="flow__number"></span>5<span class="flow__caption">ご確認 / 修正作業</span></li>
-                        <li class="flowList__item-bule"><span class="flow__number"></span>6<span class="flow__caption"></span>納品</li>
+                        <li class="flowList__item bar_red"><span class="flow__number">1</span><span class="flow__caption">ご気軽にお問い合わせください</span><div class="flow_arrow"></div></li>
+                        <li class="flowList__item"><span class="flow__number">2</span><span class="flow__caption">ご依頼内容の確認・お見積り・詳細説明</span><div class="flow_arrow flowArrow_green"></div></li>
+                        <li class="flowList__item"><span class="flow__number">3</span><span class="flow__caption">正式なご依頼</span><div class="flow_arrow flowArrow_green"></div></li>
+                        <li class="flowList__item"><span class="flow__number">4</span><span class="flow__caption">デザイン制作作業 / サイト制作作業</span><div class="flow_arrow flowArrow_green"></div></li>
+                        <li class="flowList__item"><span class="flow__number">5</span><span class="flow__caption">ご確認 / 修正作業</span><div class="flow_arrow flowArrow_green"></div></li>
+                        <li class="flowList__item bar_bule"><span class="flow__number">6</span><span class="flow__caption">納品</span></li>
                     </ol>
                 </div>
                 <div class="flow__Tablebox">
-                    <h3 class="Ttl__h3-green"></h3>
+                    <h3 class="Ttl__h3 fontGreen">費用、制作期間、目安</h3>
                     <table class="flow__Table">
                         <tr class="flow__tr">
                             <th class="flow__th-blue">制作費用目安表</th>
