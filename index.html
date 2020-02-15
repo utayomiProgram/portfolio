@@ -39,8 +39,27 @@
         $('#parallax-bg1').css('top', ( 0 - (scrolled * .2) ) + 'px');
         $('#parallax-bg2').css('top', ( 0 - (scrolled * .2) ) + 'px');
         $('#parallax-bg3').css('top', ( 0 - (scrolled * .2) ) + 'px');
-    };
+        };
 
+        $('.open').click(function(){
+                const target = '#' + $(this).attr('data-target');
+                $(target).fadeIn();
+                $('.overlay').fadeIn();
+            });
+            $('.close').click(function(){
+                $('.item__modal').fadeOut();
+                $('.overlay').fadeOut();
+            });
+        });
+
+        $(document).on('click touchend', function(event) {
+         if (!$(event.target).closest('.work__item').length && !$(event.target).closest('.item__modal').length) {
+             console.log(".work__item以外がクリックされました");
+             //!$(event.target).is(hover_element)
+             $('.item__modal').fadeOut();
+             $('.overlay').fadeOut();
+        }
+        
         });
         var scroll = new SmoothScroll('a[href*="#"]');
     </script>
@@ -61,10 +80,10 @@
                             <li class="navList__item"><a href="#service" class="navList__link" data-scroll>Service</a></li>
                             <li class="navList__item"><a href="#flow" class="navList__link" data-scroll>Flow</a></li>
                             <li class="navList__item"><a href="#profile" class="navList__link" data-scroll>Profile</a></li>
+                            <li class="navList__item"><a href="#contact" class="header__contactBtn"><img class="contact__icon" src="img/contact_aicon@2x.png" alt="">Contact</a></li>
+                            <li class="navList__item"><a href="" class="header__twitterBtn"><img src="img/twitter_aicon@2x.png" alt=""></a></li>
+                            <li class="navList__item"><a href="" class="header__instagaramBtn"><img src="img/instagram_aicon@2x.png" alt=""></a></li>
                         </ul>
-                        <a href="#contact" class="header__contactBtn"><img class="contact__icon" src="img/contact_aicon@2x.png" alt="">Contact</a>
-                        <a href="" class="header__twitterBtn"><img src="img/twitter_aicon@2x.png" alt=""></a>
-                        <a href="" class="header__instagaramBtn"><img src="img/instagram_aicon@2x.png" alt=""></a>
                     </nav>
                 </div>
              </div>
@@ -119,9 +138,43 @@
                         <div class="work__slider">
                             <div class="workSlider__sliderBox">
                                 <div class="workSlide__flexBox">
-                                    <div class="work__item">画像が入るよ</div>
-                                    <div class="work__item">画像が入るよ</div>
-                                    <div class="work__item">画像が入るよ</div>
+                                    <div class="work__item open" data-target="desigh_modal1">
+                                        <img class="workslide_img" src="img/design01.jpg" alt="">
+                                        <div class="work__item-hover">
+                                            <div class="fover__box">
+                                                <p class="hover_title">コスメ口コミアプリバナー</p>
+                                                <p class="hover_item">
+                                                    仮想案件でコスメの口コミアプリの<br>バナーを制作しました。<br>
+                                                </p>
+                                                <p class="more__btn">More...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="work__item open" data-target="desigh_modal2">
+                                        <img class="workslide_img" src="img/design02.jpg" alt="">
+                                        <div class="work__item-hover">
+                                            <div class="fover__box">
+                                                <p class="hover_title">スポーツクラブのバナー</p>
+                                                <p class="hover_item">
+                                                    仮想案件でスポーツクラブの<br>バナーを制作しました。<br>
+                                                </p>
+                                                <p class="more__btn">More...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="work__item  open" data-target="desigh_modal3">
+                                        <img class="workslide_img" src="img/design03.jpg" alt="">
+                                        <div class="work__item-hover">
+                                            <div class="fover__box">
+                                                <p class="hover_title">ココナラの小説表紙サンプル</p>
+                                                <p class="hover_item">
+                                                    ココナラで販売している小説表紙の<br>サンプル画像です。<br>
+                                                </p>
+                                                <p class="more__btn">More...</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -130,9 +183,26 @@
                         <div class="work__slider">
                             <div class="workSlider__sliderBox">
                                 <div class="workSlide__flexBox">
-                                    <div class="work__item">画像が入るよ</div>
-                                    <div class="work__item">画像が入るよ</div>
-                                    <div class="work__item">画像が入るよ</div>
+                                    <div class="work__item open" data-target="web_modal1">
+                                        <img class="workslide_img" src="img/web01.jpg" alt="">
+                                        <div class="work__item-hover">
+                                            <div class="fover__box">
+                                                <p class="hover_title">ポートフォリオサイト</p>
+                                                <p class="hover_item">
+                                                    ワイヤーフレーム制作、<br>デザイン制作、
+                                                    コーディングを1人で行いました。<br>
+                                                </p>
+                                                <p class="more__btn">More...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="work__item open" data-target="web_modal2">
+                                        <img class="workslide_img" src="img/noimge.jpg" alt="">
+                                    </div>
+                                    <div class="work__item  open" data-target="web_modal3">
+                                        <img class="workslide_img" src="img/noimge.jpg" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -141,14 +211,76 @@
                         <div class="work__slider">
                             <div class="workSlider__sliderBox">
                                 <div class="workSlide__flexBox">
-                                    <div class="work__item">画像が入るよ</div>
-                                    <div class="work__item">画像が入るよ</div>
-                                    <div class="work__item">画像が入るよ</div>
+                                    <div class="work__item open" data-target="modeling_modal1">
+                                        <img class="workslide_img" src="img/3dmodeling01.jpg" alt="">
+                                        <div class="work__item-hover">
+                                            <div class="fover__box">
+                                                <p class="hover_title">警察帽子</p>
+                                                <p class="hover_item">
+                                                    警察帽子をBlenderを使用し制作しました。
+                                                </p>
+                                                <p class="more__btn">More...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="work__item open" data-target="modeling_modal2">
+                                        <img class="workslide_img" src="img/3dmodeling02.jpg" alt="">
+                                        <div class="work__item-hover">
+                                            <div class="fover__box">
+                                                <p class="hover_title">洋風廊下</p>
+                                                <p class="hover_item">
+                                                    ゲームの背景に洋風の廊下を制作しました。<br>
+                                                </p>
+                                                <p class="more__btn">More...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="work__item  open" data-target="modeling_modal3">
+                                        <img class="workslide_img" src="img/3dmodeling03.jpg" alt="">
+                                        <div class="work__item-hover">
+                                            <div class="fover__box">
+                                                <p class="hover_title">梅と桜の和風のステージ</p>
+                                                <p class="hover_item">
+                                                    桜と梅をモチーフに作った室内のモデリングです<br>
+                                                </p>
+                                                <p class="more__btn">More...</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="item__modal" id="desigh_modal1">
+                <p>モーダル1</p>
+                <p class="close">閉じる</p>
+            </div>
+            <div class="item__modal" id="desigh_modal2">
+                <p>モーダル2</p>
+                <p class="close">閉じる</p>
+            </div>
+            <div class="item__modal" id="desigh_modal3">
+                <p>モーダル3</p>
+                <p class="close">閉じる</p>
+            </div>
+            <div class="item__modal" id="web_modal1">
+                <p>WEBモーダル1</p>
+                <p class="close">閉じる</p>
+            </div>
+            <div class="item__modal" id="modeling_modal1">
+                <p>3Dモデリングモーダル1</p>
+                <p class="close">閉じる</p>
+            </div>
+            <div class="item__modal" id="modeling_modal2">
+                <p>3Dモデリングモーダル2</p>
+                <p class="close">閉じる</p>
+            </div>
+            <div class="item__modal" id="modeling_modal3">
+                <p>3Dモデリングモーダル3</p>
+                <p class="close">閉じる</p>
             </div>
         </div>
         <div id="service">
@@ -303,13 +435,13 @@
                 <div class="footer__Contents-right">
                     <nav class="footer__nav">
                         <ul class="navList">
-                            <li class="navList__item"><a data-scroll href="#work" class="navList__link">Work</a></li>
-                            <li class="navList__item"><a data-scroll href="#service" class="navList__link">Profile</a></li>
-                            <li class="navList__item"><a data-scroll href="#flow" class="navList__link">Service</a></li>
-                            <li class="navList__item"><a data-scroll href="#profile" class="navList__link">Flow</a></li>
-                            <li class="navList__item"><a href="" class="header__contactBtn">Contact</a></li>
-                            <li class="navList__item"><a href="" class="header__twitterBtn"><img src="" alt=""></a></li>
-                            <li class="navList__item"><a href="" class="header__instagaramBtn"><img src="" alt=""></a></a></li>
+                            <li class="navList__item"><a data-scroll href="#work" class="navList__link color__white">Work</a></li>
+                            <li class="navList__item"><a data-scroll href="#service" class="navList__link color__white">Service</a></li>
+                            <li class="navList__item"><a data-scroll href="#profile" class="navList__link color__white">Profile</a></li>
+                            <li class="navList__item"><a data-scroll href="#flow" class="navList__link color__white">Flow</a></li>
+                            <li class="navList__item"><a href="" class="header__contactBtn"><img class="contact__icon" src="img/contact_aicon@2x.png" alt="">Contact</a></li>
+                            <li class="navList__item"><a href="" class="header__twitterBtn"><img class="bg__white" src="img/twitter_aicon@2x.png" alt=""></a></li>
+                            <li class="navList__item"><a href="" class="header__instagaramBtn"><img class="bg__white" src="img/instagram_aicon@2x.png" alt=""></a></li>
                         </ul>
                     </nav>
                     <p class="footer__p">デザイン・WEB制作・３Dモデリング　UTAYUMIPORTFOLIO</p>
@@ -317,6 +449,7 @@
             </div>
 
         </footer>
+        <div class="overlay"></div>
     </div>
 </body>
 </html>
