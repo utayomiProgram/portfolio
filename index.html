@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="ホームページ制作,デザイン,3Dモデリング,ポートフォリオ">
+    <meta name="description" content="うたよみのポートフォリオサイト">
+    <meta name="robots" content="all">
+    <title>UTAYOMIPORTFOLIO</title>
     <link rel="stylesheet" href="css/slick.css" />
     <link rel="stylesheet" href="css/slick-theme.css" />
     <link rel="stylesheet" href="css/style.css">
@@ -50,6 +54,18 @@
                 $('.item__modal').fadeOut();
                 $('.overlay').fadeOut();
             });
+
+         $(window).scroll(function (){
+            $('.fadein').each(function(){
+                var targetElement = $(this).offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll > targetElement - windowHeight + 200){
+                $(this).css('opacity','1');
+                $(this).css('transform','translateY(0)');
+             }
+            });
+        });
         });
 
         $(document).on('click touchend', function(event) {
@@ -81,8 +97,8 @@
                             <li class="navList__item"><a href="#flow" class="navList__link" data-scroll>Flow</a></li>
                             <li class="navList__item"><a href="#profile" class="navList__link" data-scroll>Profile</a></li>
                             <li class="navList__item"><a href="#contact" class="header__contactBtn"><img class="contact__icon" src="img/contact_aicon@2x.png" alt="">Contact</a></li>
-                            <li class="navList__item"><a href="" class="header__twitterBtn"><img src="img/twitter_aicon@2x.png" alt=""></a></li>
-                            <li class="navList__item"><a href="" class="header__instagaramBtn"><img src="img/instagram_aicon@2x.png" alt=""></a></li>
+                            <li class="navList__item"><a href="https://twitter.com/uguisuiro777" target ="_blank" class="header__twitterBtn"><img src="img/twitter_aicon@2x.png" alt=""></a></li>
+                            <li class="navList__item"><a href="https://www.instagram.com/utayomi777/" target ="_blank"  class="header__instagaramBtn"><img src="img/instagram_aicon@2x.png" alt=""></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -113,7 +129,7 @@
                             スマホ用に対応させるレスポンシブも可能です。<br>簡単な動画編集もできます。<br></p>
                     </div>
                 </div>
-                <div class="slider__item"><img class="slider__bg" id="parallax-bg3" src="img/mainimg_bg.jpg" alt=""><p>スライド３</p></div>
+                <!--<div class="slider__item"><img class="slider__bg" id="parallax-bg3" src="img/mainimg_bg.jpg" alt=""><p>スライド３</p></div>-->
             </div>
          </div>
     </div>
@@ -123,8 +139,8 @@
             </div>
             <!-- emmet -->
             <!-- h2.workTtl+div.tabwrap>(lavel.tab1_label[for=tab$]*3)+(div.panel_area>div#panel$.tab_panel*3) -->
-            <h2 class="Ttl__h2">Works / 制作物</h2>
-            <div class="work__Contents">
+            <h2 class="Ttl__h2 fadein">Works / 制作物</h2>
+            <div class="work__Contents fadein">
                 <p class="works__p">制作した物です。実務で制作したものは権利関係でこちらには出せません。<br>
                 確認したい方はお問い合わせをお願いします。</p>
                 <div class="tabWrap">
@@ -283,7 +299,7 @@
                 <p class="close">閉じる</p>
             </div>
         </div>
-        <div id="service">
+        <div id="service" class="fadein">
             <h2 class="Ttl__h2-white">Service / 出来ること</h2>
             <div class="service__Contents">
                 <div class="serviceRight">
@@ -314,7 +330,7 @@
                 </div>
             </div>
         </div>
-        <div id="flow">
+        <div id="flow" class="fadein">
             <div class="flow__Contents">
                 <h2 class="Ttl__h2">Flow / ご依頼・制作の流れ</h2>
                 <div class="flow__flowbox">
@@ -364,7 +380,7 @@
                 </div>
             </div>
         </div>
-        <div id="profile">
+        <div id="profile" class="fadein">
             <div class="profile__Contents">
                 <h2 class="Ttl__h2">Profile / 自己紹介</h2>
                 <div class="profile__box">
@@ -393,7 +409,7 @@
                 </div>
             </div>
         </div>
-        <div id="contact">
+        <div id="contact" class="fadein">
             <div class="contact__Contents">
                 <h2 class="Ttl__h2">Contact / お問い合わせ</h2>
                 <p class="contact_p">ご気軽にお問い合わせください。<br>1～3営業日以内にはご返信致します。<br>
@@ -430,7 +446,7 @@
             </div>
         </div>
         <footer>
-            <div class="footer__Contents">
+            <div class="footer__Contents" >
                 <div class="footer__Contents-left"><img src="img/footer_imgLogo@2x.png" alt="" class="footerLogo"></div>
                 <div class="footer__Contents-right">
                     <nav class="footer__nav">
@@ -440,8 +456,8 @@
                             <li class="navList__item"><a data-scroll href="#profile" class="navList__link color__white">Profile</a></li>
                             <li class="navList__item"><a data-scroll href="#flow" class="navList__link color__white">Flow</a></li>
                             <li class="navList__item"><a href="" class="header__contactBtn"><img class="contact__icon" src="img/contact_aicon@2x.png" alt="">Contact</a></li>
-                            <li class="navList__item"><a href="" class="header__twitterBtn"><img class="bg__white" src="img/twitter_aicon@2x.png" alt=""></a></li>
-                            <li class="navList__item"><a href="" class="header__instagaramBtn"><img class="bg__white" src="img/instagram_aicon@2x.png" alt=""></a></li>
+                            <li class="navList__item"><a href="https://twitter.com/uguisuiro777" target ="_blank"  class="header__twitterBtn"><img class="bg__white" src="img/twitter_aicon@2x.png" alt=""></a></li>
+                            <li class="navList__item"><a href="https://www.instagram.com/utayomi777/" target ="_blank"  class="header__instagaramBtn"><img class="bg__white" src="img/instagram_aicon@2x.png" alt=""></a></li>
                         </ul>
                     </nav>
                     <p class="footer__p">デザイン・WEB制作・３Dモデリング　UTAYUMIPORTFOLIO</p>

@@ -766,6 +766,7 @@ footer{
     margin:0px auto;
     display:flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 
 }
 .footer__Contents-left{
@@ -787,6 +788,13 @@ footer{
     padding:5px;
     background: #fff;
     border-radius:5px;
+}
+
+
+.fadein {
+  opacity : 0;
+  transform: translateY(20px);
+  transition: all 1s;
 }
 @media screen and (max-width: 1200px) {
     .header__left{
