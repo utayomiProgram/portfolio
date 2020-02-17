@@ -66,18 +66,31 @@
              }
             });
         });
-        });
+
+        $("#nav-open").click(function() {
+        console.log("#nav-openがクリックされました");
+        //$('.header__logo').css('background-color','Red');
+        $('.nav-content').toggleClass('active');
+            $(".navList__link").click(function() {
+                console.log(".nav-linkがクリックされました");
+                $('.nav-content').removeClass('active');
+            })   
+        })
 
         $(document).on('click touchend', function(event) {
          if (!$(event.target).closest('.work__item').length && !$(event.target).closest('.item__modal').length) {
-             console.log(".work__item以外がクリックされました");
              //!$(event.target).is(hover_element)
              $('.item__modal').fadeOut();
              $('.overlay').fadeOut();
         }
         
         });
+        
         var scroll = new SmoothScroll('a[href*="#"]');
+        });
+
+        
+
     </script>
 </head>
 <body>
@@ -90,6 +103,22 @@
                 </div>
                 <div class="header__right">
                     <p class="header__caption">このサイトはうたよみのポートフォリオサイトです。お気軽にお問い合わせください。</p>
+                    <div id="nav-drawer_sp">
+                        <div id="nav-open"><span></span></div>
+                        <div class="nav-content">
+                            <ul class="navList">
+                                <li class="navList__item"><a href="#work" class="navList__link" data-scroll>Work</a></li>
+                                <li class="navList__item"><a href="#service" class="navList__link" data-scroll>Service</a></li>
+                                <li class="navList__item"><a href="#flow" class="navList__link" data-scroll>Flow</a></li>
+                                <li class="navList__item"><a href="#profile" class="navList__link" data-scroll>Profile</a></li>
+                                <li class="navList__item"><a href="#contact" class="header__contactBtn"><img class="contact__icon" src="img/contact_aicon@2x.png" alt="">Contact</a></li>
+                                <div class="sp_aicon-center">
+                                    <a href="https://twitter.com/uguisuiro777" target ="_blank" class="header__twitterBtn"><img src="img/twitter_aicon@2x.png" alt=""></a>
+                                    <a href="https://www.instagram.com/utayomi777/" target ="_blank"  class="header__instagaramBtn"><img src="img/instagram_aicon@2x.png" alt=""></a>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
                     <nav class="header__nav">
                         <ul class="navList">
                             <li class="navList__item"><a href="#work" class="navList__link" data-scroll>Work</a></li>
@@ -335,10 +364,10 @@
                 <h2 class="Ttl__h2">Flow / ご依頼・制作の流れ</h2>
                 <div class="flow__flowbox">
                     <ol class="flowList">
-                        <li class="flowList__item bar_red"><span class="flow__number">1</span><span class="flow__caption">ご気軽にお問い合わせください</span><div class="flow_arrow"></div></li>
-                        <li class="flowList__item"><span class="flow__number">2</span><span class="flow__caption">ご依頼内容の確認・お見積り・詳細説明</span><div class="flow_arrow flowArrow_green"></div></li>
+                        <li class="flowList__item bar_red"><span class="flow__number">1</span><span class="flow__caption">ご気軽に<br class="sp">お問い合わせ<br class="sp">ください</span><div class="flow_arrow  arrow_sp1"></div></li>
+                        <li class="flowList__item"><span class="flow__number">2</span><span class="flow__caption">ご依頼内容の確認・<br class="sp">お見積り・詳細説明</span><div class="flow_arrow flowArrow_green  arrow_sp2"></div></li>
                         <li class="flowList__item"><span class="flow__number">3</span><span class="flow__caption">正式なご依頼</span><div class="flow_arrow flowArrow_green"></div></li>
-                        <li class="flowList__item"><span class="flow__number">4</span><span class="flow__caption">デザイン制作作業 / サイト制作作業</span><div class="flow_arrow flowArrow_green"></div></li>
+                        <li class="flowList__item"><span class="flow__number">4</span><span class="flow__caption">デザイン制作作業 /<br class="sp"> サイト制作作業</span><div class="flow_arrow flowArrow_green arrow_sp2"></div></li>
                         <li class="flowList__item"><span class="flow__number">5</span><span class="flow__caption">ご確認 / 修正作業</span><div class="flow_arrow flowArrow_green"></div></li>
                         <li class="flowList__item bar_bule"><span class="flow__number">6</span><span class="flow__caption">納品</span></li>
                     </ol>
@@ -377,6 +406,61 @@
                             <td class="flow__td">ご相談ください</td>
                         </tr>
                     </table>
+                    <div class="flow__table-sp">
+                        <table class="flow__Table">
+                            <tr class="flow__tr">
+                                <th class="flow__th-blue">費用</th>
+                            </tr>
+                            <tr>
+                                <th class="flow__th-green">バナーデザイン</th>
+                                <td class="flow__td">3000円～</td>
+                            </tr>
+                            <tr>
+                                <th class="flow__th-green">製品イラスト作成</th>
+                                <td class="flow__td">3000円～</td>
+                            </tr>
+                            <tr>
+                                <th class="flow__th-green">DM、チラシデザイン</th>
+                                <td class="flow__td">6000円～</td>
+                            </tr>
+                            <tr>
+                                <th class="flow__th-green">WEB制作 LP1ページ</th>
+                                <td class="flow__td">20000円～</td>
+                            </tr>
+                            <tr>
+                                <th class="flow__th-green">修正、画像差し替え等</th>
+                                <td class="flow__td">ご相談ください</td>
+                            </tr>
+                        </table>
+                        <table class="flow__Table">
+                            <tr class="flow__tr">
+                                <th class="flow__th-blue">期間</th>
+                            </tr>
+                            <tr>
+                                <th class="flow__th-green">バナーデザイン</th>
+                                <td class="flow__td">2週間～</td>
+                            </tr>
+                            <tr>
+                                <th class="flow__th-green">製品イラスト作成</th>
+                                <td class="flow__td">2週間～</td>
+                            </tr>
+                            <tr>
+                                <th class="flow__th-green">DM、チラシデザイン</th>
+                                <td class="flow__td">3週間～</td>
+                            </tr>
+                            <tr>
+                                <th class="flow__th-green">WEB制作 LP1ページ</th>
+                                <td class="flow__td">4週間～</td>
+                            </tr>
+                            <tr>
+                                <th class="flow__th-green">修正、画像差し替え等</th>
+                                <td class="flow__td">ご相談ください</td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    </div>
                 </div>
             </div>
         </div>

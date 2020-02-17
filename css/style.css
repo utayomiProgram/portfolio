@@ -14,6 +14,7 @@ body {
     color: #535353;
     animation: fadeIn 2s ease 0s 1 normal;
     -webkit-animation: fadeIn 2s ease 0s 1 normal;
+    overflow: hidden;
 }
 
 @keyframes fadeIn {
@@ -96,6 +97,9 @@ header{
 .header__nav{
     width: 100%;
     position: relative;
+}
+#nav-drawer_sp{
+    display:none;
 }
 .navList{
     width: 100%;
@@ -790,11 +794,19 @@ footer{
     border-radius:5px;
 }
 
+.flow__table-sp{
+    display:none;
+}
+
 
 .fadein {
   opacity : 0;
   transform: translateY(20px);
   transition: all 1s;
+}
+
+.sp{
+    display:none;
 }
 @media screen and (max-width: 1200px) {
     .header__left{
@@ -841,6 +853,123 @@ footer{
     .header__caption{
         display:none;
     }
+
+    .header__nav{
+        display:none;
+    }
+    .header__right{
+
+        width: 15%;
+        float: right;
+        margin-top: 40px;
+
+    }
+
+    .navList__item{
+        display:block;
+        width:100%;
+        margin:20px auto;
+    }
+
+    .header__twitterBtn {
+        width: 10%;
+        display: inline-block;
+        margin-right: 5px;
+        position: static;
+        right: 60px;
+        top: 5px;
+    }
+
+    .sp_aicon-center{
+        text-align:center;
+    }
+
+    .header__contactBtn{
+        width:80%;
+    }
+
+    .header__instagaramBtn {
+        width: 10%;
+        display: inline-block;
+        position: static;
+        right: 20px;
+        top: 5px;
+    }
+
+    #nav-drawer_sp{
+        display:block;
+        position: relative;
+    }
+
+    /*チェックボックス等は非表示に*/
+.nav-unshown {
+    display:block;
+  }
+  
+  /*アイコンのスペース*/
+  #nav-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+  }
+  
+  /*ハンバーガーアイコンをCSSだけで表現*/
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 3px;/*線の太さ*/
+    width: 25px;/*長さ*/
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+  }
+  #nav-open span:before {
+    bottom: -8px;
+  }
+  #nav-open span:after {
+    bottom: -16px;
+  }
+  
+  /*閉じる用の薄黒カバー*/
+  #nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  
+  /*中身*/
+  .nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 330px;/*最大幅（調整してください）*/
+    height: 100%;
+    background: #fff;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
+  }
+
+.header_logo-red{
+    background: red;
+}
+.active{
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  
 
     .float_left{
         float:none;
@@ -897,13 +1026,20 @@ footer{
 
     .slider__right{
         width:60%;
-        margin:20px auto;
+        margin:0px auto;
         height:auto;
         max-width:500px;
         min-width:300px;
     }
+
+    .absolute_right {
+        position: absolute;
+        right: 0px;
+        top: 320px;
+    }
     .slider__imgRight{
-        width:100%;
+        width: 80%;
+        margin: 20px auto;
     }
 
     .service__Contents {
@@ -934,7 +1070,81 @@ footer{
     .flow__caption{
         font-size:1.6rem;
     }
+
  }
 @media screen and (max-width: 480px) {
+    .work__item{
+        width:100%;
+    }
+    .tab_label{
+        width:80%;
+    }
+
+    .service__inner-h4{
+        width:100%;
+    }
+    .service__inner-img{
+        width:50%;
+    }
+    .arrow_sp1{
+        top:110px
+    }
+    .arrow_sp2{
+        top:90px
+    }
+    .flow__number{
+        top: 5px;
+    }
+
+    .fontGreen{
+        width:90%;
+    }
+
+    .profile__img{
+        width:60%;
+    }
+
+    .footer__Contents-left{
+        width:80%;
+        margin: 0px auto;
+    }
+
+    .footer__Contents-right{
+        margin: 0px auto;
+    }
+
+    .footer__p{
+        text-align:center;
+    }
+
+    .sp{display:block;}
+    .flow__Table{
+        display:none;
+    }
+    .flow__table-sp{
+        display:block
+    }
+
+    .flow__table-sp .flow__Table{
+        display:block; 
+        width:90%;
+        table-layout: fixed;
+        display: table;
+        margin: 30px auto;
+    }
+
+    .flow__table-sp th,td{
+        display:block;
+        width:100%;
+        margin: 5px 0px;
+
+    }
+    .flow__table-sp tr{
+        margin: 10px 0px;
+    }
+
+    .flow__table-sp tbody{
+        width:100%;
+    }
 
  }
