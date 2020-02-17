@@ -71,7 +71,7 @@
         console.log("#nav-openがクリックされました");
         //$('.header__logo').css('background-color','Red');
         $('.nav-content').toggleClass('active');
-            $(".navList__link").click(function() {
+            $(".drawer_close").click(function() {
                 console.log(".nav-linkがクリックされました");
                 $('.nav-content').removeClass('active');
             })   
@@ -107,14 +107,14 @@
                         <div id="nav-open"><span></span></div>
                         <div class="nav-content">
                             <ul class="navList">
-                                <li class="navList__item"><a href="#work" class="navList__link" data-scroll>Work</a></li>
-                                <li class="navList__item"><a href="#service" class="navList__link" data-scroll>Service</a></li>
-                                <li class="navList__item"><a href="#flow" class="navList__link" data-scroll>Flow</a></li>
-                                <li class="navList__item"><a href="#profile" class="navList__link" data-scroll>Profile</a></li>
-                                <li class="navList__item"><a href="#contact" class="header__contactBtn"><img class="contact__icon" src="img/contact_aicon@2x.png" alt="">Contact</a></li>
+                                <li class="navList__item"><a href="#work" class="navList__link drawer_close" data-scroll>Work</a></li>
+                                <li class="navList__item"><a href="#service" class="navList__link drawer_close" data-scroll>Service</a></li>
+                                <li class="navList__item"><a href="#flow" class="navList__linkdrawer_close" data-scroll>Flow</a></li>
+                                <li class="navList__item"><a href="#profile" class="navList__linkdrawer_close" data-scroll>Profile</a></li>
+                                <li class="navList__item"><a href="#contact" class="header__contactBtn drawer_close"><img class="contact__icon" src="img/contact_aicon@2x.png" alt="">Contact</a></li>
                                 <div class="sp_aicon-center">
-                                    <a href="https://twitter.com/uguisuiro777" target ="_blank" class="header__twitterBtn"><img src="img/twitter_aicon@2x.png" alt=""></a>
-                                    <a href="https://www.instagram.com/utayomi777/" target ="_blank"  class="header__instagaramBtn"><img src="img/instagram_aicon@2x.png" alt=""></a>
+                                    <a href="https://twitter.com/uguisuiro777" target ="_blank" class="header__twitterBtn drawer_close"><img src="img/twitter_aicon@2x.png" alt=""></a>
+                                    <a href="https://www.instagram.com/utayomi777/" target ="_blank"  class="header__instagaramBtn drawer_close"><img src="img/instagram_aicon@2x.png" alt=""></a>
                                 </div>
                             </ul>
                         </div>

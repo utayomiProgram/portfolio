@@ -155,6 +155,8 @@ header{
     transition: all  0.2s ease;
 }
 
+
+
 .float_left{
     float:left;
 }
@@ -1071,6 +1073,36 @@ footer{
         font-size:1.6rem;
     }
 
+    .footer__Contents-left{
+        width:30%;
+        margin: 0px auto;
+        display:block;
+    }
+
+    .footer__Contents-right{
+        margin: 0px auto;
+        display:block;
+    }
+
+    .footer__p{
+        text-align:center;
+    }
+    .footer__Contents{
+        flex-direction: column;
+    }
+
+    .footer__nav .header__contactBtn{
+        width:50%;
+    }
+
+    .footer__nav .header__twitterBtn{
+        width:5%;
+    }
+    .footer__nav .header__instagaramBtn{
+        width:5%;
+    }
+
+
  }
 @media screen and (max-width: 480px) {
     .work__item{
@@ -1118,6 +1150,7 @@ footer{
     }
 
     .sp{display:block;}
+
     .flow__Table{
         display:none;
     }
